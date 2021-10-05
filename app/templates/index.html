@@ -6,10 +6,17 @@
 
 {% block content %}
 
-	<h1 class="ui header">{{ title }}</h1>
+	<!-- <h1 class="ui header">{{ title }}</h1> -->
 
 	{% if current_user.is_authenticated %}
 	  	<h2 class="ui header">Hi {{ current_user.first_name }}!</h2>
+	{% else %}
+		{% if alternate_homescreen %}
+			<img src="{{ url_for('static', filename='img/home-alt.png') }}" alt="welcome!" />
+		{% else %}
+			<img src="{{ url_for('static', filename='img/home.svg') }}" alt="welcome!" />
+		{% endif %}
+		<h1>{{ welcome_text }}</h1>
 	{% endif %}
 
 {% endblock %}

@@ -6,7 +6,21 @@ import random
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', title='Home')
+    # Feature flags init goes here!
+
+    #
+
+    # noinspection PyDictCreation
+    flags = {
+        "welcome_text": "welcome to my python FF tutorial!"
+    }
+
+    flags["alternate_homescreen"] = False
+    return render_template(
+        'index.html',
+        **flags,
+        title='Home'
+    )
 
 
 @app.route('/map')
