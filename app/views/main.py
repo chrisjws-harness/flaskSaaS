@@ -3,6 +3,7 @@ from app import app
 import random
 
 
+
 @app.route('/')
 @app.route('/index')
 def index():
