@@ -15,6 +15,9 @@ def index():
     flags = {
         "welcome_text": "welcome to my python FF tutorial!"
     }
+    # Flag goes here!
+    
+    #
 
     flags["alternate_homescreen"] = False
     return render_template(
